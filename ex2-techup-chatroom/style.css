@@ -1,1 +1,107 @@
-/* Start coding here */
+/* ===== กำหนดสีไว้ที่เดียว ===== */
+:root {
+    --color-header: #808080;  /* เทาแถบหัว */
+    --color-green: #09c022;   /* เขียวข้อความฝั่งขวา */
+    --color-light: #e5e5e5;   /* เทาอ่อนข้อความ Coding */
+    --color-dark: #808080;    /* เทาเข้มข้อความฝั่งซ้าย */
+    --color-badge: #c4c4c4;   /* เทาวงกลมปุ่ม x */
+    --color-white: #ffffff;
+    --color-text: #111111;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Sarabun", sans-serif;
+    background: var(--color-white);
+  }
+  
+  /* ===== Header ===== */
+  .header {
+    background: var(--color-header);
+    color: var(--color-white);
+    font-family: "Times New Roman", serif;
+    font-size: 24px;
+    padding: 2px 4px;
+  }
+  
+  /* ===== พื้นที่แชท ===== */
+  .chat {
+    /* FLEX จุดที่ 1: space-between
+       ลูกตัวแรก (column-left) ชิดซ้าย / ลูกตัวสุดท้าย (column-right) ชิดขวา */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* ให้ทั้งสองคอลัมน์เริ่มจากด้านบน */
+  
+    padding: 16px 8px;
+  }
+  
+  /* ===== คอลัมน์ข้อความ ===== */
+  .column {
+    /* FLEX จุดที่ 2: เรียงข้อความจากบนลงล่าง */
+    display: flex;
+    flex-direction: column;
+    gap: 8px;           /* ระยะห่างระหว่างข้อความ */
+    width: 96px;
+  }
+  
+  .column-left {
+    margin-top: 74px;   /* ดันฝั่งซ้ายให้ต่ำกว่าฝั่งขวาเหมือนในรูป */
+  }
+  
+  /* ===== ข้อความแต่ละกล่อง ===== */
+  .message {
+    /* POSITION จุดที่ 3: relative = เป็นจุดอ้างอิงให้ .badge */
+    position: relative;
+  
+    font-size: 11px;
+    padding: 6px 10px;
+    border-radius: 999px;   /* ค่าสูง ๆ = ปลายมนเป็นแคปซูล */
+    color: var(--color-text);
+    white-space: nowrap;
+  }
+  
+  .message-green {
+    background: var(--color-green);
+    font-weight: bold;
+  }
+  
+  .message-light {
+    background: var(--color-light);
+  }
+  
+  .message-dark {
+    background: var(--color-dark);
+  }
+  
+  /* ===== badge / ปุ่ม x ที่มุมกล่อง ===== */
+  .badge {
+    /* POSITION จุดที่ 4: absolute + top/right
+       ลอยที่มุมขวาบนของ .message (ค่าติดลบ = ยื่นออกนอกกล่อง) */
+    position: absolute;
+    top: -4px;
+    right: -2px;
+  
+    /* FLEX จุดที่ 5: จัดไอคอนให้อยู่กลางวงกลม */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    font-size: 7px;
+  }
+  
+  .badge-green {
+    background: var(--color-green);
+  }
+  
+  .badge-close {
+    background: var(--color-badge);
+    color: var(--color-white);
+  }

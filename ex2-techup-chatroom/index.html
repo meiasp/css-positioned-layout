@@ -14,7 +14,38 @@
 </head>
 
 <body>
-  <!-- Start coding here -->
+  <!-- แถบหัวด้านบน -->
+  <header class="header">Techup Chatroom</header>
+
+  <!-- พื้นที่แชท: flex แบ่งซ้าย-ขวา -->
+  <main class="chat">
+
+    <!-- ===== คอลัมน์ซ้าย (ต้องเขียนก่อน เพราะ flex เรียงตามลำดับใน HTML) ===== -->
+    <div class="column column-left">
+      <div class="message message-dark">🍩</div>
+      <div class="message message-dark">🍩</div>
+    </div>
+
+    <!-- ===== คอลัมน์ขวา ===== -->
+    <div class="column column-right">
+
+      <!-- badge เขียวเล็ก ๆ ที่มุมขวาบน -->
+      <div class="message message-green">
+        สวัสดีจ้า
+        <span class="badge badge-green"></span>
+      </div>
+
+      <!-- ปุ่ม x ที่มุมขวาบน -->
+      <div class="message message-light">
+        Coding สนุกจังเลย
+        <span class="badge badge-close"><i class="fa-solid fa-xmark"></i></span>
+      </div>
+
+      <div class="message message-green">🍩 🍩</div>
+
+    </div>
+
+  </main>
 </body>
 
 </html>
